@@ -1,0 +1,55 @@
+DATE: 04-3-12
+UPDATE: 06-10-11
+
+This is the documentation for the redshift comoving-distance magnitude calculation program. The 
+following files are listed and explained as to what they are and what they do:
+
+1) batch.c --- source code for generating the batch file invoked by GNUplot. Called by the main program code.
+2) batch.h --- header file that gives the batch file routine. To be included with the main as well.
+
+3) core.c --- main program code. Includes the two functions needed to run program from header files, namely: 
+	      input_integ.h and batch.h.
+
+4) function.c --- code where the function to integrate is defined. Called by the integration file.
+5) function.h --- header file that gives the function. It is included in the integration file.
+
+6) ingrl_simp.c --- integration file using Simpson's Rule. Calls function from header and is 
+                    included in input_integ.c.
+7) ingrl_simp.h --- header for the integration file.
+
+8) input_integ.c --- code that is bulk of program. Called by main. Takes input of cosmological parameters, 
+                     determines whether these inputs correspond to an open, closed or flat universe; runs 
+                     loop to calculate redshift of galaxies/stars in 0.01 increments; calculates comoving 
+                     distance to these objects; determines physical distance utilizing luminosity distance 
+                     and accounts for whether this is along a spherical, hyperboloid or flat surface 
+                     (i.e. closed, open or flat universe) and finally, gives comparison of magnitudes 
+                     calculated in a SPECIFIED model with magnitudes in an empty model (Milne universe).
+9) input_integ.h --- header for the input_integ routine.
+
+10) comoving_scpt.sh --- executable script that will run all necessary compiling/linking by generating 
+                         object code and executing program along with batch routines.  
+
+All files are located under the directory: /astronet/Mmg/Project/src_lib_x. 
+
+Program is located in ~/Project; name is luminosity_distance.
+
+To build program from sources and script, just follow these steps:
+
+1) Make sure all source files are in same directory!
+2) Run the script comoving_scpt.sh on Unix/Linux; use ./comoving_scpt.sh. 
+   This script can be anywhere and is directory independent. Can look for directory with sources as input.
+
+The rest of these steps are for the program (after having run script or simply executing 
+and using program itself). No need to recompile every time right?
+
+3) Follow the program commands: 
+	a. choose and type in the name(s) for the output file(s).
+	b. type in the values for the maximum redshift and fractional density parameters that define the model.
+	c. type in the name for the file with the gnuplot script (plotting batch file) that will use 
+           output data to generate graph(s) as postscript file(s).
+4) Edit the plotting batch file to accommodate all the output files that were generated in the run; 
+   choose graph details like point sizes, line thickness, axis labels, etc.
+5) From the shell, run the command: gnuplot [PLOT-BATCH_FILENAME].bat. 
+6) Evoke postscript viewer for the output.
+7) DONE!
+
