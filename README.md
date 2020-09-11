@@ -8,6 +8,6 @@ This is a repository of projects, ideas and interests over the years:
   - a program to obtain historical stock data and calculate returns for model investment portfolios written in Python
   - a regularly tracked and updated spreadsheet of real Covid data for all LA County, with epidemiological models, in Excel.
   
-... and whatever else of interest that comes to mind!
+... and whatever else that comes to mind!
 
 Cheers.
