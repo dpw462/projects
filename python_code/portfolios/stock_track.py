@@ -41,10 +41,10 @@ class StockTrack:
                 exit             
         ## (3) section to do regression
         try:
-            correlation = y.corr(x_corr)
+            correlation = y.corr(x_corr).round(4)
             regr = linear_model.LinearRegression()
             regr.fit(X, y)
-            predict_price = regr.predict([[self.target_price]])
+            predict_price = regr.predict([[self.target_price]]).round(2)
             print(f'\n[*] Expected price {self.tickers[1]} = {predict_price}') 
             print(f'[*] Correlation = {correlation}')
             #print(regr.coef_)
