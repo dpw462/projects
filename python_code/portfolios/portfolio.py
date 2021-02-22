@@ -8,14 +8,15 @@ import matplotlib.pyplot as plt
 #ind_data = pd.DataFrame()
 #for k in indices:
 #    ind_data[k] = wb.DataReader(k,data_source='yahoo',start='2015-1-1')['Adj Close']
-tickers1 = ['VFIAX','VGT']
+tickers1 = ['VFIAX']
 mydata1 = pd.DataFrame()
 for t in tickers1:
-    mydata1[t] = wb.DataReader(t,data_source='yahoo',start='2019-1-1')['Adj Close']
-tickers2 = ['AAPL','GOOG','MSFT','AMZN','FB','PG','V','JPM','BRK-A','JNJ'] 
+    mydata1[t] = wb.DataReader(t,data_source='yahoo',start='2010-1-1')['Adj Close']
+#tickers2 = ['AAPL','GOOG','MSFT','AMZN','FB','PG','V','JPM','BRK-A','JNJ'] 
+tickers2 = ['MSFT','INTC','NVDA','IBM']
 mydata2 = pd.DataFrame()
 for i in tickers2:
-    mydata2[i] = wb.DataReader(i,data_source='yahoo',start='2019-1-1')['Adj Close']
+    mydata2[i] = wb.DataReader(i,data_source='yahoo',start='2010-1-1')['Adj Close']
 
 ##section for PLOTTING data
 '''
@@ -33,9 +34,9 @@ plt.show()
 # first portfolio & second portfolio
 # weights need to sum to 1 i.e. [0.5,0.5] for two funds/tickers
 returns1 = (mydata1 / mydata1.shift(1)) - 1
-weights1 = np.array([0,1])
+weights1 = np.array([1])
 returns2 = (mydata2 / mydata2.shift(1)) - 1
-weights2 = np.array([0.2,0.2,0.2,0.2,0.2,0,0,0,0,0])
+weights2 = np.array([0.25,0.25,0.25,0.25])
 # indices
 #returns_index = (ind_data / ind_data.shift(1)) - 1
 annual_returns1 = returns1.mean() * 250
