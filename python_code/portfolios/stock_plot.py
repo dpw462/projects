@@ -1,3 +1,9 @@
+'''
+author: d. wells
+year:2021
+purpose: 
+- use with price_tracker to plot correlation data
+'''
 import matplotlib.pyplot as plt
 
 class StockPlot:

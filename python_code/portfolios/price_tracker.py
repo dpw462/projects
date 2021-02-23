@@ -2,8 +2,8 @@
 author: d. wells
 year:2021
 purpose: 
-track prices and correlation in stocks, futures
-program needs stock_track.py & stock_plot.py
+- track prices and correlation in markets
+- program needs stock_track.py & stock_plot.py
 '''
 import yfinance as yf
 from stock_track import StockTrack as st

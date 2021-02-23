@@ -1,11 +1,19 @@
-import numpy as np
+'''
+author: d. wells
+year:2021
+purpose: 
+use with price_tracker to: 
+- get data from Yahoo Finance API
+- plot data
+- do regression
+'''
 import pandas as pd
-from stock_plot import StockPlot as sp
 from pandas_datareader import data as pdr     
+from stock_plot import StockPlot as sp
 from sklearn import linear_model
 
 class StockTrack:
-    ''' futures and etf tracker '''
+    ''' can get data, graph and do regression '''
     def __init__(self, tickers, start_term, term, target_price):
         self.tickers = tickers
         self.start_term = start_term
