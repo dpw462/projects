@@ -53,7 +53,7 @@ if __name__ == '__main__':
             print('[*] Error: nothing to process!')
             exit
         try:
-            redo = input('\n[+] Repeat <Y,N>?: ')
+            redo = input('\n[+] Repeat <Y, else any key to exit>?: ')
             tickers.clear()
         except:
             print('\n[*] Error: input error!')
