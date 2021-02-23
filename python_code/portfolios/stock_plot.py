@@ -7,7 +7,7 @@ purpose:
 import matplotlib.pyplot as plt
 
 class StockPlot:
-    ''' use for plotting data on futres vs etf'''
+    ''' use for plotting correlation data '''
     def __init__(self,first_ticker,X,second_ticker,y):
         self.first_ticker = first_ticker
         self.X = X

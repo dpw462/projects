@@ -15,13 +15,13 @@ def get_current_quote(symbol):
     current_quote = quote.history(period='1d')
     return round(current_quote['Close'][0],3)
 
-'''main program with inputs'''
+''' main program with inputs '''
 if __name__ == '__main__':
     today = str(date.today())
     print('\n*** PRICE & CORRELATION TRACKING ***')
     redo = 'y'
     while redo.lower().strip() == 'y':
-        ##store symbols to fetch data via Yahoo Finance API
+        ## store symbols to fetch data via Yahoo Finance API
         tickers = []
         #examples...
         #tickers = ['CL=F','USO'] will give FUTURE and ETF
@@ -44,7 +44,8 @@ if __name__ == '__main__':
         except:
             print("\n[*] Error: input errors!")
             exit
-        ##main program here
+        
+        ## main program here
         try:
             tick1_tick2 = st(tickers,start_term,term,target_price)
             tick1_tick2.create_data()
