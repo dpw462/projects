@@ -19,8 +19,7 @@ class GetMetrics:
 
     def get_metrics(self):        
         filename = f'{self.output_file}.csv' # create file to save data
-        
-        ## need to create a MARKET index in order to compute covariance and add it to portfolio
+        ## need to create a MARKET index & add to portfolio in order to compute covariance
         sp_data = pd.DataFrame()
         print('\n[*] Using S&P 500 as benchmark...')
         t = '^GSPC'
