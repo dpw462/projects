@@ -53,7 +53,7 @@ class PortfolioReturns:
        
         ## print results of respective portfolio returns
         pfolio = (tot_return * 100).round(3)
-        print(f'\n[*] Historical returns: {pfolio}%')
+        print(f'\n[*] Realized, simple returns: {pfolio}%')
     
         ## use CAPM model analysis for portfolios 
         want_capm = input('\n[+] CAPM Analysis (output to CSV) <"y", else any key> ?: ')
