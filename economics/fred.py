@@ -108,25 +108,45 @@ tot_pop_ann = tot_pop.groupby(['year']).mean().round(3)
 
 df = pd.DataFrame(tot_pop_ann)
 df.columns = ['total_population (k)']
+df['%_chg1'] = tot_pop_ann.pct_change()
 df['pop: 25 to 54 (k)'] = pop_25to54_ann
+df['%_chg2'] = pop_25to54_ann.pct_change()
 df['pop: 20 to 24 (k)'] = pop_20to24_ann
+df['%_chg3'] = pop_20to24_ann.pct_change()
 df['employ/pop ratio (%)'] = employ_pop_ratio_ann
+df['%_chg4'] = employ_pop_ratio_ann.pct_change()
 df['nat_gas_consumption (BCF)'] = natgas_ann
+df['%_chg5'] = natgas_ann.pct_change()
 df['manufacturing: inv/rev'] = manu_inv_rev_ann
+df['%_chg6'] = manu_inv_rev_ann.pct_change()
 df['retail: inv/rev'] = retail_inv_rev_ann
+df['%_chg7'] = retail_inv_rev_ann.pct_change()
 df['home_ownership (%)'] = home_owner_ann
+df['%_chg8'] = home_owner_ann.pct_change()
 df['three_month_LIBOR (% USD)'] = libor_ann
+df['%_chg9'] = libor_ann.pct_change()
 df['fed_funds_rate (%)'] = fed_funds_ann
+df['%_chg10'] = fed_funds_ann.pct_change()
 df['personal_savings ($B)'] = psave_ann
+df['%_chg11'] = psave_ann.pct_change()
 df['total_debt ($M)'] = debt_ann
+df['%_chg12'] = debt_ann.pct_change()
 df['income_percapita ($)'] = pipc_ann
+df['%_chg13'] = pipc_ann.pct_change()
 df['unemployment (%)'] = unrate_ann
+df['%_chg14'] = unrate_ann.pct_change()
 df['total_nonfarm (k persons)'] = tot_nonfarm_ann
+df['%_chg15'] = tot_nonfarm_ann.pct_change()
 df['govt_tot_exp ($B)'] = govt_tot_exp_ann
+df['%_chg16'] = govt_tot_exp_ann.pct_change()
 df['tax_receipts_corp ($B)'] = tax_receipt_corp_ann
+df['%_chg17'] = tax_receipt_corp_ann.pct_change()
 df['tax_rate (%)'] = tax_rates_ann
+df['%_chg18'] = tax_rates_ann.pct_change()
 df['gdp ($B)'] = gdp_ann 
+df['%_chg19'] = gdp_ann.pct_change()
 df['cpi (indx 1982-1984 = 100)'] = cpi_ann
+df['%_chg20'] = cpi_ann.pct_change()
 
-#print(df.head())
-df.to_excel('us_econ.xlsx',sheet_name='us_econ')
+print(df)
+#df.to_excel('us_econ.xlsx',sheet_name='us_econ')
