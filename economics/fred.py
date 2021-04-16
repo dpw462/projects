@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import datetime
 from pandas_datareader import data as pdr
+import matplotlib.pyplot as plt
 
 start = datetime.datetime(1960,1,1)
 end = datetime.datetime(2020,12,31)
@@ -148,5 +149,20 @@ df['%_chg19'] = gdp_ann.pct_change()
 df['cpi (indx 1982-1984 = 100)'] = cpi_ann
 df['%_chg20'] = cpi_ann.pct_change()
 
-print(df)
+plt.figure(figsize=(10,6))
+plt.plot(tax_receipt_corp_ann,label='Tax Rev')
+plt.plot(tax_rates_ann,label='Tax Rate')
+plt.plot(unrate_ann,label='Un-Employment')
+plt.plot(retail_inv_rev_ann,label='Retail Inv to Sales')
+plt.plot(manu_inv_rev_ann,label='Manufacturing Inv to Sales')
+plt.legend()
+plt.savefig('econ.pdf')
+#plt.show()
 #df.to_excel('us_econ.xlsx',sheet_name='us_econ')
+#print(df)
+us_econ_corr = df.corr()
+#print('\n')
+#print(us_econ_corr)
+#us_econ_corr.to_excel('us_econ_corr.xlsx',sheet_name='us_econ_corr')
+
+
