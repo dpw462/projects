@@ -7,7 +7,7 @@ This is a repository of projects, ideas and interests over the years:
   - a macroeconomic data collection & analysis tool written in Python.
   - a simple arcade-shooter written in Python.
   - a program to obtain historical stock data and calculate returns for model investment portfolios written in Python.
-  - a tracked & updated spreadsheet of real Covid data for all LA County, with epidemiological models, in Excel.
+  - a spreadsheet of real Covid data for all LA County, with epidemiological models, in Excel.
   
 ... and whatever else that comes to mind!
 
