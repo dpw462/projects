@@ -11,8 +11,7 @@ from getfred import GetFred as GF
 if __name__ == '__main__':
     ''' call the main class here and pass dates '''
     print('\n[***] Welcome to FRED Analysis Package (FREDAP) [***]')
-    ##################################################
-    redo = 'y'
+    redo = 'y' # initialize main program loop here
     while (redo.lower().strip() == 'y'):
         ## define periods
         beg_yr = input('\n[+] Enter initial year: ')
@@ -22,6 +21,7 @@ if __name__ == '__main__':
         ## get FRED data and analysis
         fred_data = GF(start,end)
         fred_data.fetch_fred_data()
+        ## restart program if desired
         redo = input('\n[+] Start over (y, else any key): ')
     print('\n[*] Exiting... bye!')
     exit

@@ -18,7 +18,7 @@ class GetFred:
     def fetch_fred_data(self):
         ## GET ECONOMIC STATS OF INTEREST HERE 
         '''
-        NEED CODES (e.g. "Reap GDP" is given by "gdpca", etc.). 
+        NEED CODES (e.g. "Real GDP" is given by "gdpca", etc.). 
         FIND ON FRED SITE: https://fred.stlouisfed.org 
         '''
         fredcodes = {
